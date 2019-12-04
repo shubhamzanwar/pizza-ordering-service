@@ -6,7 +6,7 @@ import * as styles from './index.module.css';
 
 const Home = ({ pizzas }) => (
   <div className={styles['home-container']}>
-    {pizzas.map((pizza) => (<PizzaContainer toppings={pizza} />))}
+    {pizzas.map((pizza, index) => (<PizzaContainer toppings={pizza} index={index} />))}
   </div>
 );
 
