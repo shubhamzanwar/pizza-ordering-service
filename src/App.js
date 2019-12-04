@@ -13,8 +13,8 @@ function App() {
       </header>
       <div className={styles.content}>
         <Switch>
-          <Route exact path="/" render={Home} />
-          <Route path="/checkout" render={Checkout} />
+          <Route exact path="/" render={() => <Home />} />
+          <Route path="/checkout" render={() => <Checkout />} />
         </Switch>
       </div>
     </div>
