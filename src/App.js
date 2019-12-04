@@ -11,8 +11,8 @@ function App() {
       </header>
       <div className={styles.content}>
         <Switch>
-          <Route exact path="/" render={() => <div>home</div> }/>
-          <Route path="/checkout" render={() => <div>Checkout</div> }/>
+          <Route exact path="/" render={() => <div>home</div>} />
+          <Route path="/checkout" render={() => <div>Checkout</div>} />
         </Switch>
       </div>
     </div>
