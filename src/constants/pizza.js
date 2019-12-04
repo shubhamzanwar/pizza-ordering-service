@@ -22,3 +22,12 @@ export const defaultToppings = {
   sausages: false,
   tomato: false,
 };
+
+export const toppings = {
+  'Green Pepper': 'greenPepper',
+  'Red Pepper': 'redPepper',
+  Mushroom: 'mushrooms',
+  Olives: 'olives',
+  Sausages: 'sausages',
+  Tomatoes: 'tomato',
+};
