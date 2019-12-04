@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import pizzaBase from '../../assets/base.png';
-import { toppingImageMap } from '../../constants/pizza';
+import pizzaBase from '../../../assets/base.png';
+import { toppingImageMap } from '../../../constants/pizza';
 import * as styles from './index.module.css';
 
 const Pizza = (props) => {
@@ -31,12 +31,12 @@ Pizza.propTypes = {
 
 Pizza.defaultProps = {
   toppings: {
-    greenPepper: true,
-    redPepper: true,
-    olives: true,
-    sausages: true,
-    tomato: true,
-    mushrooms: true,
+    greenPepper: false,
+    redPepper: false,
+    olives: false,
+    sausages: false,
+    tomato: false,
+    mushrooms: false,
   },
 };
 

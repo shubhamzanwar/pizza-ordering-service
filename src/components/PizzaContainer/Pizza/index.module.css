@@ -1,7 +1,6 @@
 .pizza-container {
     height: 35vw;
     width: 35vw;
-    border: 1px solid black;
     border-radius: 100%;
     position: relative;
 }
