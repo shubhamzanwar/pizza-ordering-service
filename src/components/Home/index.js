@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Pizza from '../Pizza';
+import PizzaContainer from '../PizzaContainer';
 import * as styles from './index.module.css';
 
 const Home = ({ pizzas }) => (
   <div className={styles['home-container']}>
-    {pizzas.map((pizza) => (<Pizza toppings={pizza} />))}
+    {pizzas.map((pizza) => (<PizzaContainer toppings={pizza} />))}
   </div>
 );
 
