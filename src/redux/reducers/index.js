@@ -1,11 +1,8 @@
 import { ADD_TOPPING, ADD_NEW_PIZZA } from '../actions';
+import { defaultToppings } from '../../constants/pizza';
 
 const initialState = {
-  pizzas: [
-    {
-      bleh: 100,
-    },
-  ],
+  pizzas: [{ ...defaultToppings }],
 };
 
 export default (state = initialState, action) => {
