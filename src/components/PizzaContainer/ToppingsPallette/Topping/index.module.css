@@ -1,0 +1,17 @@
+.topping {
+    width: 40%;
+    margin-left: 10%;
+    height: 60px;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #98521A;
+    color: #98521A;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.active {
+    background: #98521A;
+    color: #fff;
+}
