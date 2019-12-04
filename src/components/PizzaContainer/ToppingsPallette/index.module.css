@@ -1,0 +1,16 @@
+.toppings-pallette {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.toppings-pallette-header {
+    margin-left: 10%;
+}
+
+.toppings-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
