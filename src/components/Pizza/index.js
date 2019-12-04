@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import pizzaBase from '../../assets/base.png';
 import { toppingImageMap } from '../../constants/pizza';
 import * as styles from './index.module.css';
@@ -28,8 +27,6 @@ Pizza.propTypes = {
     tomato: PropTypes.bool,
     mushrooms: PropTypes.bool,
   }),
-  // eslint-disable-next-line react/no-unused-prop-types
-  index: PropTypes.number.isRequired, // Used in mapStateToProps
 };
 
 Pizza.defaultProps = {
@@ -43,8 +40,4 @@ Pizza.defaultProps = {
   },
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  toppings: state.pizzas[ownProps.index],
-});
-
-export default connect(mapStateToProps)(Pizza);
+export default Pizza;
