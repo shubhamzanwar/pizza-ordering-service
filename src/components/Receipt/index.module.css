@@ -1,0 +1,22 @@
+.checkout-receipt {
+    flex: 1;
+    margin: 0 0 0 1rem;
+    box-shadow: 0 0 10px 1px #ccc;
+    padding: 1rem;
+}
+
+.receipt-pizza-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.receipt-total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+
+    border-top: 1px solid;
+    padding-top: 1rem;
+}
