@@ -1,0 +1,11 @@
+.checkout-summary-container {
+    flex: 3;
+}
+
+.checkout-pizza-summary {
+    padding: 2rem;
+    box-shadow: 0 0 50px 1px #ccc;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
