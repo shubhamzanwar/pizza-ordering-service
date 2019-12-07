@@ -8,7 +8,9 @@ import * as styles from './index.module.css';
 const CheckoutSummary = ({ pizzas, deletePizza }) => (
   <div className={styles['checkout-summary-container']}>
     <h3 className={styles['toppings-pallette-header']}>Your Pizzas</h3>
-    {pizzas.map((pizza) => (<PizzaSummary pizza={pizza} deletePizza={deletePizza} />))}
+    {pizzas.map((pizza, index) => (
+      <PizzaSummary pizza={pizza} deletePizza={() => deletePizza(index)} />
+    ))}
   </div>
 );
 
