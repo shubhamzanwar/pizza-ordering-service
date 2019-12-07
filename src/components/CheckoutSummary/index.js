@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import PizzaSummary from '../PizzaSummary';
+import PizzaSummary from './PizzaSummary';
 import { DELETE_PIZZA } from '../../redux/actions';
 import * as styles from './index.module.css';
 

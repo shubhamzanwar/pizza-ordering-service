@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Pizza from '../PizzaContainer/Pizza';
-import { getPizzaSummary } from '../../utils/pizza';
+import Pizza from '../../PizzaContainer/Pizza';
+import { getPizzaSummary } from '../../../utils/pizza';
 import * as styles from './index.module.css';
 
 const PizzaSummary = ({ pizza, deletePizza }) => (
