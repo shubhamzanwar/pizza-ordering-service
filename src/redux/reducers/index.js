@@ -1,4 +1,4 @@
-import { TOGGLE_TOPPING, ADD_NEW_PIZZA } from '../actions';
+import { TOGGLE_TOPPING, ADD_NEW_PIZZA, DELETE_PIZZA } from '../actions';
 import { defaultToppings } from '../../constants/pizza';
 
 const initialState = {
@@ -18,6 +18,12 @@ export default (state = initialState, action) => {
         ...state,
         pizzas: [...state.pizzas, { ...defaultToppings }],
       };
+    case DELETE_PIZZA: {
+      const { index } = action.payload;
+      const { pizzas } = state;
+      pizzas.splice(index, 1);
+      return { ...state, pizzas: [...pizzas] };
+    }
     default:
       return state;
   }

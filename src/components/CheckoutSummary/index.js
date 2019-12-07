@@ -1,19 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Pizza from '../PizzaContainer/Pizza';
-import { getPizzaSummary } from '../../utils/pizza';
+import PizzaSummary from '../PizzaSummary';
+import { DELETE_PIZZA } from '../../redux/actions';
 import * as styles from './index.module.css';
 
-const CheckoutSummary = ({ pizzas }) => (
+const CheckoutSummary = ({ pizzas, deletePizza }) => (
   <div className={styles['checkout-summary-container']}>
     <h3 className={styles['toppings-pallette-header']}>Your Pizzas</h3>
-    {pizzas.map((pizza) => (
-      <div className={styles['checkout-pizza-summary']}>
-        <Pizza toppings={pizza} className={styles['summary-pizza-preview']} />
-        <div>{getPizzaSummary(pizza)}</div>
-      </div>
-    ))}
+    {pizzas.map((pizza) => (<PizzaSummary pizza={pizza} deletePizza={deletePizza} />))}
   </div>
 );
 
@@ -28,6 +23,7 @@ CheckoutSummary.propTypes = {
       mushrooms: PropTypes.bool,
     }),
   ),
+  deletePizza: PropTypes.func.isRequired,
 };
 
 CheckoutSummary.defaultProps = {
@@ -38,4 +34,11 @@ const mapStateToProps = (state) => ({
   pizzas: state.pizzas,
 });
 
-export default connect(mapStateToProps)(CheckoutSummary);
+const mapDispatchToProps = (dispatch) => ({
+  deletePizza: (index) => dispatch({
+    type: DELETE_PIZZA,
+    payload: { index },
+  }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutSummary);

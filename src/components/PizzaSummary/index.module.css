@@ -1,0 +1,24 @@
+.pizza-summary {
+    padding: 2rem;
+    box-shadow: 0 0 50px 1px #ccc;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.summary-pizza-preview {
+    height: 6rem;
+    width: 6rem;
+    margin-right: 3rem;
+}
+
+.pizza-summary-toppings {
+    flex: 1;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+}
