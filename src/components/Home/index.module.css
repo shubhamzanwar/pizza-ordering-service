@@ -1,3 +1,22 @@
 .home-container {
     padding-top: 2rem;
 }
+
+.add-button {
+    margin-top: 4rem;
+    height: 60px;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    border: 1px solid #98521A;
+    color: #98521A;
+    font-size: 1.1rem;
+    font-weight: bold;
+    -webkit-transition: background 0.5s, color 0.5s; /* Safari prior 6.1 */
+    transition: background 0.5s, color 0.5s;
+}
+
+.add-button:hover {
+    background: #98521A;
+    color: #fff;
+}

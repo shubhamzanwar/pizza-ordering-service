@@ -9,8 +9,11 @@
     color: #98521A;
     font-size: 1.1rem;
     font-weight: bold;
+    -webkit-transition: background 0.5s, color 0.5s; /* Safari prior 6.1 */
+    transition: background 0.5s, color 0.5s;
 }
 
+.topping:hover,
 .active {
     background: #98521A;
     color: #fff;
