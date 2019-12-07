@@ -14,7 +14,10 @@ export default (state = initialState, action) => {
       return { ...state, pizzas: [...pizzas] };
     }
     case ADD_NEW_PIZZA:
-      return state;
+      return {
+        ...state,
+        pizzas: [...state.pizzas, { ...defaultToppings }],
+      };
     default:
       return state;
   }
