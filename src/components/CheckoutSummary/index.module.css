@@ -9,3 +9,9 @@
     align-items: center;
     margin-bottom: 1rem;
 }
+
+.summary-pizza-preview {
+    height: 6rem;
+    width: 6rem;
+    margin-right: 3rem;
+}

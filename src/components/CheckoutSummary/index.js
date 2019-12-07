@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Pizza from '../PizzaContainer/Pizza';
 import { getPizzaSummary } from '../../utils/pizza';
 import * as styles from './index.module.css';
 
@@ -8,7 +9,10 @@ const CheckoutSummary = ({ pizzas }) => (
   <div className={styles['checkout-summary-container']}>
     <h3 className={styles['toppings-pallette-header']}>Your Pizzas</h3>
     {pizzas.map((pizza) => (
-      <div className={styles['checkout-pizza-summary']}>{getPizzaSummary(pizza)}</div>
+      <div className={styles['checkout-pizza-summary']}>
+        <Pizza toppings={pizza} className={styles['summary-pizza-preview']} />
+        <div>{getPizzaSummary(pizza)}</div>
+      </div>
     ))}
   </div>
 );
