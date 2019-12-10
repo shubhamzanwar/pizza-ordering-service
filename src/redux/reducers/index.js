@@ -10,19 +10,31 @@ export default (state = initialState, action) => {
     case TOGGLE_TOPPING: {
       const { pizzas } = state;
       const { index, topping } = action.payload;
-      pizzas[index] = { ...pizzas[index], [topping]: !pizzas[index][topping] };
-      return { ...state, pizzas: [...pizzas] };
+      pizzas[index] = {
+        ...pizzas[index],
+        [topping]: !pizzas[index][topping],
+      };
+      return {
+        ...state,
+        pizzas: [...pizzas],
+      };
     }
     case ADD_NEW_PIZZA:
       return {
         ...state,
-        pizzas: [...state.pizzas, { ...defaultToppings }],
+        pizzas: [
+          ...state.pizzas,
+          { ...defaultToppings },
+        ],
       };
     case DELETE_PIZZA: {
       const { index } = action.payload;
       const { pizzas } = state;
       pizzas.splice(index, 1);
-      return { ...state, pizzas: [...pizzas] };
+      return {
+        ...state,
+        pizzas: [...pizzas],
+      };
     }
     default:
       return state;
