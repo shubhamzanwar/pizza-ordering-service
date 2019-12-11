@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { withGlobalStore } from '../../redux/store';
 import * as styles from './index.module.css';
 
 class Receipt extends Component {
   render() {
-    const { pizzas } = this.props;
+    const { state: { pizzas } } = this.props;
     return (
       <div className={styles['checkout-receipt']}>
         <h3 className={styles['receipt-header']}>Pizza Invoice</h3>
@@ -25,24 +25,11 @@ class Receipt extends Component {
 }
 
 Receipt.propTypes = {
-  pizzas: PropTypes.arrayOf(
-    PropTypes.shape({
-      greenPepper: PropTypes.bool,
-      redPepper: PropTypes.bool,
-      olives: PropTypes.bool,
-      sausages: PropTypes.bool,
-      tomato: PropTypes.bool,
-      mushrooms: PropTypes.bool,
-    }),
-  ),
+  state: PropTypes.object,
 };
 
 Receipt.defaultProps = {
-  pizzas: [],
+  state: {},
 };
 
-const mapStateToProps = (state) => ({
-  pizzas: state.pizzas,
-});
-
-export default connect(mapStateToProps)(Receipt);
+export default withGlobalStore(Receipt);

@@ -1,41 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React, { useContext } from 'react';
+import { StoreContext } from '../../redux/store';
 import PizzaContainer from '../PizzaContainer';
 import { ADD_NEW_PIZZA } from '../../redux/actions';
 import * as styles from './index.module.css';
 
-const Home = ({ pizzas, addNewPizza }) => (
-  <div className={styles['home-container']}>
-    {pizzas.map((pizza, index) => (<PizzaContainer toppings={pizza} index={index} />))}
-    <button type="button" className={styles['add-button']} onClick={addNewPizza}>Add another Pizza</button>
-  </div>
-);
-
-Home.propTypes = {
-  pizzas: PropTypes.arrayOf(
-    PropTypes.shape({
-      greenPepper: PropTypes.bool,
-      redPepper: PropTypes.bool,
-      olives: PropTypes.bool,
-      sausages: PropTypes.bool,
-      tomato: PropTypes.bool,
-      mushrooms: PropTypes.bool,
-    }),
-  ),
-  addNewPizza: PropTypes.func.isRequired,
+const Home = () => {
+  const { state, dispatch } = useContext(StoreContext);
+  console.log(state);
+  const { pizzas } = state;
+  const addNewPizza = () => dispatch({ type: ADD_NEW_PIZZA });
+  return (
+    <div className={styles['home-container']}>
+      {pizzas.map((pizza, index) => (<PizzaContainer toppings={pizza} index={index} />))}
+      <button type="button" className={styles['add-button']} onClick={addNewPizza}>Add another Pizza</button>
+    </div>
+  );
 };
 
-Home.defaultProps = {
-  pizzas: [],
-};
 
-const mapStateToProps = (state) => ({
-  pizzas: state.pizzas,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  addNewPizza: () => dispatch({ type: ADD_NEW_PIZZA }),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;
