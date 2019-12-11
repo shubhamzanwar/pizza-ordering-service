@@ -24,6 +24,9 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': 0,
     'import/prefer-default-export': 0,
-    'react/prefer-stateless-function': 0
+    'react/prefer-stateless-function': 0,
+    'react/jsx-props-no-spreading': 0,
+    'react/forbid-prop-types': 0,
+    'no-param-reassign': 0
   },
 };
