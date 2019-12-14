@@ -4,10 +4,10 @@ import Pizza from './Pizza';
 import ToppingsPallette from './ToppingsPallette';
 import * as styles from './index.module.css';
 
-const PizzaContainer = ({ toppings, index }) => (
+const PizzaContainer = ({ toppings, index, toggleTopping }) => (
   <div className={styles['pizza-container']}>
     <Pizza toppings={toppings} />
-    <ToppingsPallette toppings={toppings} index={index} />
+    <ToppingsPallette toppings={toppings} index={index} toggleTopping={toggleTopping} />
   </div>
 );
 
@@ -21,6 +21,7 @@ PizzaContainer.propTypes = {
     mushrooms: PropTypes.bool,
   }),
   index: PropTypes.number,
+  toggleTopping: PropTypes.func.isRequired,
 };
 
 PizzaContainer.defaultProps = {

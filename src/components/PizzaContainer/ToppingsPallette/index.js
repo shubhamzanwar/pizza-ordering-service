@@ -4,7 +4,7 @@ import { toppings as toppingsList } from '../../../constants/pizza';
 import Topping from './Topping';
 import * as styles from './index.module.css';
 
-const ToppingsPallette = ({ index, toppings }) => (
+const ToppingsPallette = ({ index, toppings, toggleTopping }) => (
   <div className={styles['toppings-pallette']}>
     <h3 className={styles['toppings-pallette-header']}>Choose your toppings</h3>
     <div className={styles['toppings-container']}>
@@ -14,6 +14,7 @@ const ToppingsPallette = ({ index, toppings }) => (
           index={index}
           active={toppings[toppingsList[topping]]}
           key={topping}
+          toggleTopping={() => toggleTopping(index, toppingsList[topping])}
         />
       ))}
     </div>
@@ -30,6 +31,7 @@ ToppingsPallette.propTypes = {
     mushrooms: PropTypes.bool,
   }),
   index: PropTypes.number,
+  toggleTopping: PropTypes.func.isRequired,
 };
 
 ToppingsPallette.defaultProps = {
