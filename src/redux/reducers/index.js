@@ -1,7 +1,7 @@
 import { TOGGLE_TOPPING, ADD_NEW_PIZZA, DELETE_PIZZA } from '../actions';
 import { defaultToppings } from '../../constants/pizza';
 
-const initialState = {
+export const initialState = {
   pizzas: [{ ...defaultToppings }],
 };
 
